@@ -2,13 +2,13 @@ import React from 'react';
 import Background from '~/components/Background';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export default function Dashboard() {
+export default function Profile() {
   return <Background />;
 }
 
-Dashboard.navigationOptions = {
-  tabBarLabel: 'Agendamentos',
+Profile.navigationOptions = {
+  tabBarLabel: 'Meu Perfil',
   tabBarIcon: ({tintColor}) => (
-    <Icon name="event" size={20} color={tintColor} />
+    <Icon name="person" size={20} color={tintColor} />
   ),
 };
