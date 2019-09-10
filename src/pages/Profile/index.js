@@ -7,8 +7,10 @@ import {
   FormInput,
   Separetor,
   SubmitButton,
+  LogoutButton,
 } from './styles';
 import {updateProfileRequest} from '~/store/modules/user/actions';
+import {signOut} from '~/store/modules/auth/actions';
 import Background from '~/components/Background';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -32,6 +34,10 @@ export default function Profile() {
     setConfirmPassword('');
     setPassword('');
   }, [profile]);
+
+  function handleLogout() {
+    dispatch(signOut());
+  }
 
   function handleSubmit() {
     dispatch(
@@ -104,6 +110,7 @@ export default function Profile() {
             onChangeText={setConfirmPassword}
           />
           <SubmitButton onPress={handleSubmit}>Atualizar Perfil</SubmitButton>
+          <LogoutButton onPress={handleLogout}>Sair do GoBarber</LogoutButton>
         </Form>
       </Container>
     </Background>
